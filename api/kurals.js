@@ -9,10 +9,12 @@ export default function handler(req, res) {
   const { number } = req.query;
 
   if (number) {
-    const kural = data.find(k => k.number == number);
+    const kural = data.find(k => k.Number == number);
     return res.json(kural || { error: "Not found" });
   }
 
   const random = data[Math.floor(Math.random() * data.length)];
   res.json(random);
 }
+
+
